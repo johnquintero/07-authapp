@@ -1,0 +1,15 @@
+<div class="topnav" id="myTopnav">
+    <span>Auth0 App</span>
+    <a [routerLink]="['home']" routerLinkActive="active">Home</a>
+    <a [routerLink]="['precios']" routerLinkActive="active">Precios</a>
+    <a [routerLink]="['protegida']" routerLinkActive="active" *ngIf="auth.loggedIn">Protegida</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <header>
+        <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+        <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+        <a routerLink="/">Home</a>&nbsp;
+        <a routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
+      </header>
+  </div>
